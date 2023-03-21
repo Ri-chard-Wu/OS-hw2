@@ -107,7 +107,7 @@ class MMU {
     }
 
     bool has_enough_frame(int nBytes){
-        if(nFreeFrame * PageSize > nBytes) return true;
+        if(nFreeFrame * PageSize >= nBytes) return true;
         else{return false;}
     }
 

@@ -73,7 +73,10 @@ AddrSpace::AddrSpace()
     for (int i = 0; i < NumPhysPages; i++) {
         pageTable[i].virtualPage = i;	// for now, virt page # = phys page #
         pageTable[i].physicalPage = i;
-        pageTable[i].valid = TRUE;
+        
+        // pageTable[i].valid = TRUE;
+        pageTable[i].valid = FALSE;
+
         pageTable[i].use = FALSE;
         pageTable[i].dirty = FALSE;
         pageTable[i].readOnly = FALSE;  
@@ -140,59 +143,131 @@ AddrSpace::Load(char *fileName)
 			+ UserStackSize;	// we need to increase the size
 						// to leave room for the stack
 #endif
-    numPages = divRoundUp(size, PageSize);
-    size = numPages * PageSize;
 
-    ASSERT(numPages <= NumPhysPages);		// check we're not trying
+
+    numPages = divRoundUp(size, PageSize);
+    // size = numPages * PageSize;
+
+    if(!kernel->mmu->has_enough_frame(size)){
+        kernel->machine->RaiseException(MemoryLimitException);
+    }
+
+
+    // ASSERT(numPages <= NumPhysPages);		// check we're not trying
 						// to run anything too big --
 						// at least until we have
 						// virtual memory
 
-    DEBUG(dbgAddr, "Initializing address space: " << numPages << ", " << size);
+
 
 // then, copy in the code and data segments into memory
 // Note: this code assumes that virtual address = physical address
+
+	int frameIdx;
+    // int nPages, pageOfst;
+    // nPages = (size / PageSize) + 1;
+    // pageOfst = size % PageSize;
+
+    int startPageIdx, startPageofst, stopPageIdx, stopPageofst;
+
+
     if (noffH.code.size > 0) {
-        DEBUG(dbgAddr, "Initializing code segment.");
-	    DEBUG(dbgAddr, noffH.code.virtualAddr << ", " << noffH.code.size);
+        startPageIdx = noffH.code.virtualAddr / PageSize;
+        startPageofst = noffH.code.virtualAddr % PageSize;
+        stopPageIdx = (noffH.code.virtualAddr + noffH.code.size) / PageSize;
+        stopPageofst = (noffH.code.virtualAddr + noffH.code.size) % PageSize;
+
+
+        if(startPageofst){
+
+            if(kernel->mmu->get_free_frame(&frameIdx)){
+
+                this->pageTable[startPageIdx].physicalPage = frameIdx;
+                this->pageTable[startPageIdx].valid = true;
+
+                executable->ReadAt(
+                    &(kernel->machine->mainMemory[frameIdx * PageSize + startPageofst]),
+                    PageSize - startPageofst, 0);
+            }
+            else{
+                kernel->machine->RaiseException(MemoryLimitException);
+            }
+        }
+
+
+        for(int i = startPageIdx + 1; i <= stopPageIdx - 1; i++){
+            
+            if(kernel->mmu->get_free_frame(&frameIdx)){
+
+                this->pageTable[i].physicalPage = frameIdx;
+                this->pageTable[i].valid = true;
+
+                executable->ReadAt(&(kernel->machine->mainMemory[frameIdx * PageSize]),
+                    PageSize, 
+                    PageSize - startPageofst + (i - startPageIdx - 1) * PageSize);
+            }
+            else{
+                kernel->machine->RaiseException(MemoryLimitException);
+            }
+        }
+
+
+        if(stopPageofst){
+
+            if(kernel->mmu->get_free_frame(&frameIdx)){
+
+                this->pageTable[stopPageIdx].physicalPage = frameIdx;
+                this->pageTable[stopPageIdx].valid = true;
+
+                executable->ReadAt(
+                    &(kernel->machine->mainMemory[frameIdx * PageSize]),
+                    stopPageofst, 
+                    PageSize - startPageofst + (stopPageIdx - startPageIdx - 1) * PageSize);
+            }
+            else{
+                kernel->machine->RaiseException(MemoryLimitException);
+            }
+        }
         
-        executable->ReadAt(
-		&(kernel->machine->mainMemory[noffH.code.virtualAddr]), 
-			noffH.code.size, noffH.code.inFileAddr);
     }
 
-    cout<< "\n[AddrSpace::Load()] current thread: " << kernel->currentThread->getName() << "\n";
 
-    cout << "\n[AddrSpace::Load()] " << "noffH.code.virtualAddr: " << noffH.code.virtualAddr 
-        << ", noffH.code.size: " << noffH.code.size << "\n";
+
+
+  
+    // if (noffH.code.size > 0) {
+ 
+    //     executable->ReadAt(
+	// 	    &(kernel->machine->mainMemory[noffH.code.virtualAddr]), 
+	// 		noffH.code.size, noffH.code.inFileAddr);
+        
+    // }
+
+
+
+    // cout<< "\n[AddrSpace::Load()] current thread: " << kernel->currentThread->getName() << "\n";
+
+    // cout << "\n[AddrSpace::Load()] " << "noffH.code.virtualAddr: " << noffH.code.virtualAddr 
+    //     << ", noffH.code.size: " << noffH.code.size << "\n";
 
 
 
     if (noffH.initData.size > 0) {
-        DEBUG(dbgAddr, "Initializing data segment.");
-	    DEBUG(dbgAddr, noffH.initData.virtualAddr << ", " << noffH.initData.size);
+
       
         executable->ReadAt(
 		&(kernel->machine->mainMemory[noffH.initData.virtualAddr]),
 			noffH.initData.size, noffH.initData.inFileAddr);
     }
 
-    cout << "\n[AddrSpace::Load()] " << "noffH.initData.virtualAddr: " << noffH.initData.virtualAddr 
-        << ", noffH.initData.size: " << noffH.initData.size << "\n";
-
-
+ 
 #ifdef RDATA
+
     if (noffH.readonlyData.size > 0) {
-        DEBUG(dbgAddr, "Initializing read only data segment.");
-	DEBUG(dbgAddr, noffH.readonlyData.virtualAddr << ", " << noffH.readonlyData.size);
         executable->ReadAt(
-		&(kernel->machine->mainMemory[noffH.readonlyData.virtualAddr]),
+		    &(kernel->machine->mainMemory[noffH.readonlyData.virtualAddr]),
 			noffH.readonlyData.size, noffH.readonlyData.inFileAddr);
     }
-
-    cout << "\n[AddrSpace::Load()] " << "noffH.readonlyData.virtualAddr: " << noffH.readonlyData.virtualAddr 
-        << ", noffH.readonlyData.size: " << noffH.readonlyData.size << "\n";
-
 
 #endif
 

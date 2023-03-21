@@ -105,129 +105,129 @@ In file included from ../machine/mipssim.cc:17:
 ../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
 ../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
 ../machine/mipssim.cc: In member function ‘void Machine::OneInstruction(Instruction*)’:
-../machine/mipssim.cc:148: warning: array subscript has type ‘char’
-../machine/mipssim.cc:171: warning: array subscript has type ‘char’
-../machine/mipssim.cc:171: warning: array subscript has type ‘char’
-../machine/mipssim.cc:172: warning: array subscript has type ‘char’
-../machine/mipssim.cc:172: warning: array subscript has type ‘char’
-../machine/mipssim.cc:173: warning: array subscript has type ‘char’
-../machine/mipssim.cc:177: warning: array subscript has type ‘char’
-../machine/mipssim.cc:181: warning: array subscript has type ‘char’
-../machine/mipssim.cc:182: warning: array subscript has type ‘char’
-../machine/mipssim.cc:187: warning: array subscript has type ‘char’
-../machine/mipssim.cc:191: warning: array subscript has type ‘char’
+../machine/mipssim.cc:166: warning: array subscript has type ‘char’
+../machine/mipssim.cc:189: warning: array subscript has type ‘char’
+../machine/mipssim.cc:189: warning: array subscript has type ‘char’
+../machine/mipssim.cc:190: warning: array subscript has type ‘char’
+../machine/mipssim.cc:190: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:191: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:195: warning: array subscript has type ‘char’
-../machine/mipssim.cc:195: warning: array subscript has type ‘char’
-../machine/mipssim.cc:195: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:199: warning: array subscript has type ‘char’
-../machine/mipssim.cc:199: warning: array subscript has type ‘char’
-../machine/mipssim.cc:199: warning: array subscript has type ‘char’
-../machine/mipssim.cc:203: warning: array subscript has type ‘char’
-../machine/mipssim.cc:203: warning: array subscript has type ‘char’
-../machine/mipssim.cc:207: warning: array subscript has type ‘char’
-../machine/mipssim.cc:207: warning: array subscript has type ‘char’
-../machine/mipssim.cc:214: warning: array subscript has type ‘char’
-../machine/mipssim.cc:219: warning: array subscript has type ‘char’
-../machine/mipssim.cc:224: warning: array subscript has type ‘char’
-../machine/mipssim.cc:231: warning: array subscript has type ‘char’
-../machine/mipssim.cc:236: warning: array subscript has type ‘char’
-../machine/mipssim.cc:236: warning: array subscript has type ‘char’
-../machine/mipssim.cc:241: warning: array subscript has type ‘char’
-../machine/mipssim.cc:245: warning: array subscript has type ‘char’
-../machine/mipssim.cc:245: warning: array subscript has type ‘char’
-../machine/mipssim.cc:246: warning: array subscript has type ‘char’
-../machine/mipssim.cc:246: warning: array subscript has type ‘char’
-../machine/mipssim.cc:251: warning: array subscript has type ‘char’
-../machine/mipssim.cc:252: warning: array subscript has type ‘char’
-../machine/mipssim.cc:271: warning: array subscript has type ‘char’
-../machine/mipssim.cc:273: warning: array subscript has type ‘char’
-../machine/mipssim.cc:278: warning: array subscript has type ‘char’
-../machine/mipssim.cc:292: warning: array subscript has type ‘char’
+../machine/mipssim.cc:200: warning: array subscript has type ‘char’
+../machine/mipssim.cc:205: warning: array subscript has type ‘char’
+../machine/mipssim.cc:209: warning: array subscript has type ‘char’
+../machine/mipssim.cc:209: warning: array subscript has type ‘char’
+../machine/mipssim.cc:213: warning: array subscript has type ‘char’
+../machine/mipssim.cc:213: warning: array subscript has type ‘char’
+../machine/mipssim.cc:213: warning: array subscript has type ‘char’
+../machine/mipssim.cc:217: warning: array subscript has type ‘char’
+../machine/mipssim.cc:217: warning: array subscript has type ‘char’
+../machine/mipssim.cc:217: warning: array subscript has type ‘char’
+../machine/mipssim.cc:221: warning: array subscript has type ‘char’
+../machine/mipssim.cc:221: warning: array subscript has type ‘char’
+../machine/mipssim.cc:225: warning: array subscript has type ‘char’
+../machine/mipssim.cc:225: warning: array subscript has type ‘char’
+../machine/mipssim.cc:232: warning: array subscript has type ‘char’
+../machine/mipssim.cc:237: warning: array subscript has type ‘char’
+../machine/mipssim.cc:242: warning: array subscript has type ‘char’
+../machine/mipssim.cc:249: warning: array subscript has type ‘char’
+../machine/mipssim.cc:254: warning: array subscript has type ‘char’
+../machine/mipssim.cc:254: warning: array subscript has type ‘char’
+../machine/mipssim.cc:259: warning: array subscript has type ‘char’
+../machine/mipssim.cc:263: warning: array subscript has type ‘char’
+../machine/mipssim.cc:263: warning: array subscript has type ‘char’
+../machine/mipssim.cc:264: warning: array subscript has type ‘char’
+../machine/mipssim.cc:264: warning: array subscript has type ‘char’
+../machine/mipssim.cc:269: warning: array subscript has type ‘char’
+../machine/mipssim.cc:270: warning: array subscript has type ‘char’
+../machine/mipssim.cc:289: warning: array subscript has type ‘char’
+../machine/mipssim.cc:291: warning: array subscript has type ‘char’
+../machine/mipssim.cc:296: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:310: warning: array subscript has type ‘char’
-../machine/mipssim.cc:314: warning: array subscript has type ‘char’
-../machine/mipssim.cc:326: warning: array subscript has type ‘char’
-../machine/mipssim.cc:354: warning: array subscript has type ‘char’
-../machine/mipssim.cc:378: warning: array subscript has type ‘char’
-../machine/mipssim.cc:406: warning: array subscript has type ‘char’
-../machine/mipssim.cc:433: warning: array subscript has type ‘char’
-../machine/mipssim.cc:437: warning: array subscript has type ‘char’
-../machine/mipssim.cc:441: warning: array subscript has type ‘char’
-../machine/mipssim.cc:445: warning: array subscript has type ‘char’
-../machine/mipssim.cc:449: warning: array subscript has type ‘char’
-../machine/mipssim.cc:449: warning: array subscript has type ‘char’
-../machine/mipssim.cc:454: warning: array subscript has type ‘char’
-../machine/mipssim.cc:454: warning: array subscript has type ‘char’
+../machine/mipssim.cc:328: warning: array subscript has type ‘char’
+../machine/mipssim.cc:332: warning: array subscript has type ‘char’
+../machine/mipssim.cc:344: warning: array subscript has type ‘char’
+../machine/mipssim.cc:372: warning: array subscript has type ‘char’
+../machine/mipssim.cc:396: warning: array subscript has type ‘char’
+../machine/mipssim.cc:424: warning: array subscript has type ‘char’
+../machine/mipssim.cc:451: warning: array subscript has type ‘char’
+../machine/mipssim.cc:455: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:459: warning: array subscript has type ‘char’
-../machine/mipssim.cc:459: warning: array subscript has type ‘char’
-../machine/mipssim.cc:459: warning: array subscript has type ‘char’
-../machine/mipssim.cc:463: warning: array subscript has type ‘char’
-../machine/mipssim.cc:463: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:463: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:467: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:467: warning: array subscript has type ‘char’
-../machine/mipssim.cc:471: warning: array subscript has type ‘char’
-../machine/mipssim.cc:471: warning: array subscript has type ‘char’
-../machine/mipssim.cc:476: warning: array subscript has type ‘char’
-../machine/mipssim.cc:476: warning: array subscript has type ‘char’
+../machine/mipssim.cc:472: warning: array subscript has type ‘char’
+../machine/mipssim.cc:472: warning: array subscript has type ‘char’
+../machine/mipssim.cc:477: warning: array subscript has type ‘char’
+../machine/mipssim.cc:477: warning: array subscript has type ‘char’
+../machine/mipssim.cc:477: warning: array subscript has type ‘char’
+../machine/mipssim.cc:481: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:481: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:481: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:485: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:485: warning: array subscript has type ‘char’
-../machine/mipssim.cc:485: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:489: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:489: warning: array subscript has type ‘char’
-../machine/mipssim.cc:490: warning: array subscript has type ‘char’
-../machine/mipssim.cc:492: warning: array subscript has type ‘char’
-../machine/mipssim.cc:496: warning: array subscript has type ‘char’
-../machine/mipssim.cc:497: warning: array subscript has type ‘char’
+../machine/mipssim.cc:494: warning: array subscript has type ‘char’
+../machine/mipssim.cc:494: warning: array subscript has type ‘char’
+../machine/mipssim.cc:499: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:499: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:503: warning: array subscript has type ‘char’
-../machine/mipssim.cc:506: warning: array subscript has type ‘char’
+../machine/mipssim.cc:503: warning: array subscript has type ‘char’
+../machine/mipssim.cc:503: warning: array subscript has type ‘char’
+../machine/mipssim.cc:507: warning: array subscript has type ‘char’
+../machine/mipssim.cc:507: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:508: warning: array subscript has type ‘char’
-../machine/mipssim.cc:512: warning: array subscript has type ‘char’
-../machine/mipssim.cc:513: warning: array subscript has type ‘char’
+../machine/mipssim.cc:510: warning: array subscript has type ‘char’
+../machine/mipssim.cc:514: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:515: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:517: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:521: warning: array subscript has type ‘char’
-../machine/mipssim.cc:521: warning: array subscript has type ‘char’
-../machine/mipssim.cc:525: warning: array subscript has type ‘char’
-../machine/mipssim.cc:525: warning: array subscript has type ‘char’
+../machine/mipssim.cc:524: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:526: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:530: warning: array subscript has type ‘char’
-../machine/mipssim.cc:532: warning: array subscript has type ‘char’
-../machine/mipssim.cc:536: warning: array subscript has type ‘char’
-../machine/mipssim.cc:537: warning: array subscript has type ‘char’
-../machine/mipssim.cc:538: warning: array subscript has type ‘char’
-../machine/mipssim.cc:542: warning: array subscript has type ‘char’
-../machine/mipssim.cc:542: warning: array subscript has type ‘char’
+../machine/mipssim.cc:531: warning: array subscript has type ‘char’
+../machine/mipssim.cc:533: warning: array subscript has type ‘char’
+../machine/mipssim.cc:535: warning: array subscript has type ‘char’
+../machine/mipssim.cc:539: warning: array subscript has type ‘char’
+../machine/mipssim.cc:539: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:543: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:543: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:544: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:548: warning: array subscript has type ‘char’
-../machine/mipssim.cc:552: warning: array subscript has type ‘char’
-../machine/mipssim.cc:552: warning: array subscript has type ‘char’
-../machine/mipssim.cc:552: warning: array subscript has type ‘char’
+../machine/mipssim.cc:550: warning: array subscript has type ‘char’
+../machine/mipssim.cc:554: warning: array subscript has type ‘char’
+../machine/mipssim.cc:555: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:556: warning: array subscript has type ‘char’
-../machine/mipssim.cc:556: warning: array subscript has type ‘char’
-../machine/mipssim.cc:561: warning: array subscript has type ‘char’
-../machine/mipssim.cc:593: warning: array subscript has type ‘char’
-../machine/mipssim.cc:596: warning: array subscript has type ‘char’
-../machine/mipssim.cc:600: warning: array subscript has type ‘char’
-../machine/mipssim.cc:604: warning: array subscript has type ‘char’
+../machine/mipssim.cc:563: warning: array subscript has type ‘char’
+../machine/mipssim.cc:563: warning: array subscript has type ‘char’
+../machine/mipssim.cc:564: warning: array subscript has type ‘char’
+../machine/mipssim.cc:564: warning: array subscript has type ‘char’
+../machine/mipssim.cc:565: warning: array subscript has type ‘char’
+../machine/mipssim.cc:569: warning: array subscript has type ‘char’
+../machine/mipssim.cc:573: warning: array subscript has type ‘char’
+../machine/mipssim.cc:573: warning: array subscript has type ‘char’
+../machine/mipssim.cc:573: warning: array subscript has type ‘char’
+../machine/mipssim.cc:580: warning: array subscript has type ‘char’
+../machine/mipssim.cc:580: warning: array subscript has type ‘char’
+../machine/mipssim.cc:585: warning: array subscript has type ‘char’
+../machine/mipssim.cc:617: warning: array subscript has type ‘char’
 ../machine/mipssim.cc:620: warning: array subscript has type ‘char’
-../machine/mipssim.cc:652: warning: array subscript has type ‘char’
-../machine/mipssim.cc:655: warning: array subscript has type ‘char’
-../machine/mipssim.cc:658: warning: array subscript has type ‘char’
-../machine/mipssim.cc:661: warning: array subscript has type ‘char’
-../machine/mipssim.cc:683: warning: array subscript has type ‘char’
-../machine/mipssim.cc:683: warning: array subscript has type ‘char’
-../machine/mipssim.cc:683: warning: array subscript has type ‘char’
-../machine/mipssim.cc:687: warning: array subscript has type ‘char’
-../machine/mipssim.cc:687: warning: array subscript has type ‘char’
+../machine/mipssim.cc:624: warning: array subscript has type ‘char’
+../machine/mipssim.cc:628: warning: array subscript has type ‘char’
+../machine/mipssim.cc:644: warning: array subscript has type ‘char’
+../machine/mipssim.cc:676: warning: array subscript has type ‘char’
+../machine/mipssim.cc:679: warning: array subscript has type ‘char’
+../machine/mipssim.cc:682: warning: array subscript has type ‘char’
+../machine/mipssim.cc:685: warning: array subscript has type ‘char’
+../machine/mipssim.cc:707: warning: array subscript has type ‘char’
+../machine/mipssim.cc:707: warning: array subscript has type ‘char’
+../machine/mipssim.cc:707: warning: array subscript has type ‘char’
+../machine/mipssim.cc:711: warning: array subscript has type ‘char’
+../machine/mipssim.cc:711: warning: array subscript has type ‘char’
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 ../machine/translate.cc: In member function ‘ExceptionType Machine::Translate(int, int*, int, bool)’:
-../machine/translate.cc:249: warning: comparison between signed and unsigned integer expressions
+../machine/translate.cc:264: warning: comparison between signed and unsigned integer expressions
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 cc1plus: note: obsolete option -I- used, please use -iquote instead
@@ -268,8 +268,10 @@ cc1plus: note: obsolete option -I- used, please use -iquote instead
 ../threads/thread.cc: In member function ‘void Thread::SelfTest()’:
 ../threads/thread.cc:440: warning: deprecated conversion from string constant to ‘char*’
 cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/addrspace.cc: In member function ‘bool AddrSpace::Load(char*)’:
+../userprog/addrspace.cc:139: warning: comparison between signed and unsigned integer expressions
 ../userprog/addrspace.cc: In member function ‘ExceptionType AddrSpace::Translate(unsigned int, unsigned int*, int)’:
-../userprog/addrspace.cc:392: warning: comparison between signed and unsigned integer expressions
+../userprog/addrspace.cc:426: warning: comparison between signed and unsigned integer expressions
 ../threads/kernel.h: In member function ‘bool MMU::get_free_frame(int*)’:
 ../threads/kernel.h:120: warning: control reaches end of non-void function
 cc1plus: note: obsolete option -I- used, please use -iquote instead
@@ -285,6 +287,8 @@ cc1plus: note: obsolete option -I- used, please use -iquote instead
 ../userprog/synchconsole.cc: In constructor ‘SynchConsoleOutput::SynchConsoleOutput(char*)’:
 ../userprog/synchconsole.cc:79: warning: deprecated conversion from string constant to ‘char*’
 ../userprog/synchconsole.cc:80: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc: In member function ‘void SynchConsoleOutput::PutInt(int)’:
+../userprog/synchconsole.cc:117: warning: embedded ‘\0’ in format
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 cc1plus: note: obsolete option -I- used, please use -iquote instead

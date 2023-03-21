@@ -56,6 +56,7 @@ void Machine::Run() {
   // cout<< "\n[Machine::Run()] current thread: " << kernel->currentThread->getName() << "\n";
 
 
+
   Instruction *instr = new Instruction;  // storage for decoded instruction
   if (debug->IsEnabled('m')) {
     cout << "Starting program in thread: " << kernel->currentThread->getName();
@@ -138,11 +139,28 @@ void Machine::OneInstruction(Instruction *instr) {
                           // in the future
 
   // Fetch instruction
-  if (!ReadMem(registers[PCReg], 4, &raw))
-    return;  // exception occurred
+  if (!ReadMem(registers[PCReg], 4, &raw)){
+      
+      return;  // exception occurred
+  }
+  
+  // static int cnt=0;
+  // cnt++;
+  // cout<< cnt << ": " << raw << "\n";
+
+
+
 
   instr->value = raw;
   instr->Decode();
+
+  // static int cnt=0;
+  // cnt++;
+  // cout<< cnt << ": " << (int)instr->opCode << "\n";
+
+
+
+
 
   if (debug->IsEnabled('m')) {
     struct OpString *str = &opStrings[instr->opCode];
@@ -539,6 +557,9 @@ void Machine::OneInstruction(Instruction *instr) {
       break;
 
     case OP_SUB:
+
+      
+
       diff = registers[instr->rs] - registers[instr->rt];
       if (((registers[instr->rs] ^ registers[instr->rt]) & SIGN_BIT) &&
           ((registers[instr->rs] ^ diff) & SIGN_BIT)) {
@@ -553,6 +574,9 @@ void Machine::OneInstruction(Instruction *instr) {
       break;
 
     case OP_SW:
+
+      // cout << "in OP_SW\n";
+
       if (!WriteMem((unsigned)(registers[instr->rs] + instr->extra), 4, registers[instr->rt]))
         return;
       break;

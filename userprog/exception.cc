@@ -197,9 +197,9 @@ void ExceptionHandler(ExceptionType which) {
       }
       break;
 
-    case MemoryLimitException:
-      SysHalt();
-      break;
+    // case MemoryLimitException:
+    //   SysHalt();
+    //   break;
 
     default:
       cerr << "Unexpected user mode exception " << (int)which << "\n";

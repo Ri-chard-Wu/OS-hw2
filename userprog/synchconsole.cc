@@ -114,7 +114,7 @@ SynchConsoleOutput::PutInt(int value)
     char str[15];
     int idx=0;
     //sprintf(str, "%d\n\0", value);  the true one
-    // sprintf(str, "%d\n\0", value); //simply for trace code
+    sprintf(str, "%d\n\0", value); //simply for trace code
     lock->Acquire();
     do{
         

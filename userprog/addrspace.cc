@@ -97,15 +97,6 @@ AddrSpace::~AddrSpace()
 }
 
 
-//----------------------------------------------------------------------
-// AddrSpace::Load
-// 	Load a user program into memory from a file.
-//
-//	Assumes that the page table has been initialized, and that
-//	the object code file is in NOFF format.
-//
-//	"fileName" is the file containing the object code to load into memory
-//----------------------------------------------------------------------
 
 bool 
 AddrSpace::Load(char *fileName) 
@@ -132,16 +123,11 @@ AddrSpace::Load(char *fileName)
     ASSERT(noffH.noffMagic == NOFFMAGIC);
 
 #ifdef RDATA
-// how big is address space?
     size = noffH.code.size + noffH.readonlyData.size + noffH.initData.size +
            noffH.uninitData.size + UserStackSize;	
-                                                // we need to increase the size
-						// to leave room for the stack
 #else
-// how big is address space?
     size = noffH.code.size + noffH.initData.size + noffH.uninitData.size 
-			+ UserStackSize;	// we need to increase the size
-						// to leave room for the stack
+			+ UserStackSize;	
 #endif
 
 
@@ -149,9 +135,20 @@ AddrSpace::Load(char *fileName)
     
     ASSERT(kernel->mmu->has_enough_frame(numPages));
     
+    int frameIdx;
+    for(int i=0;i<numPages;i++){
+        kernel->mmu->get_free_frame(&frameIdx);
+        pageTable[i].physicalPage = frameIdx;
+        pageTable[i].valid = true;
+    }
+
     // if(!kernel->mmu->has_enough_frame(numPages)){
     //     kernel->machine->RaiseException(MemoryLimitException, 0);
     // }
+
+    // cout << "noffH.code.virtualAddr: "<< noffH.code.virtualAddr << "\n"
+    //      << "noffH.code.inFileAddr: "<< noffH.code.inFileAddr << "\n"
+    //      << "noffH.code.size: "<< noffH.code.size << "\n";
 
     LoadSegment(executable, noffH.code, false);
     LoadSegment(executable, noffH.initData, false);
@@ -171,70 +168,73 @@ void
 AddrSpace::LoadSegment(OpenFile *executable, Segment sgm, bool readOnly){
     if(sgm.size <= 0) return;
 
-
-	int frameIdx;
+    int frameIdx;
     int startPageIdx, startPageofst, stopPageIdx, stopPageofst;
+    
 
     startPageIdx = sgm.virtualAddr / PageSize;
     startPageofst = sgm.virtualAddr % PageSize;
     stopPageIdx = (sgm.virtualAddr + sgm.size - 1) / PageSize;
     stopPageofst = (sgm.virtualAddr + sgm.size - 1) % PageSize;
 
+    if(readOnly) pageTable[startPageIdx].readOnly = true;
 
-    if(startPageofst){
+    frameIdx = pageTable[startPageIdx].physicalPage;
+    executable->ReadAt(
+        &(kernel->machine->mainMemory[frameIdx * PageSize + startPageofst]),
+        PageSize - startPageofst, 
+        sgm.inFileAddr);
 
-        if(kernel->mmu->get_free_frame(&frameIdx)){
-
-            pageTable[startPageIdx].physicalPage = frameIdx;
-            pageTable[startPageIdx].valid = true;
-            if(readOnly) pageTable[startPageIdx].readOnly = true;
-
-            executable->ReadAt(
-                &(kernel->machine->mainMemory[frameIdx * PageSize + startPageofst]),
-                PageSize - startPageofst, 
-                sgm.inFileAddr);
-        }
-        else{
-            // kernel->machine->RaiseException(MemoryLimitException, 0);
-        }
-    }
 
 
     for(int i = startPageIdx + 1; i <= stopPageIdx - 1; i++){
-        
-        if(kernel->mmu->get_free_frame(&frameIdx)){
 
-            pageTable[i].physicalPage = frameIdx;
-            pageTable[i].valid = true;
-            if(readOnly) pageTable[i].readOnly = true;
+        if(readOnly) pageTable[i].readOnly = true;
+        frameIdx = pageTable[i].physicalPage;
 
-            executable->ReadAt(&(kernel->machine->mainMemory[frameIdx * PageSize]),
-                PageSize, 
-                sgm.inFileAddr + PageSize - startPageofst + (i - startPageIdx - 1) * PageSize);
-        }
-        else{
-            // kernel->machine->RaiseException(MemoryLimitException, 0);
-        }
+        executable->ReadAt(&(kernel->machine->mainMemory[frameIdx * PageSize]),
+            PageSize, 
+            sgm.inFileAddr + PageSize - startPageofst + (i - startPageIdx - 1) * PageSize);
     }
 
 
     if(stopPageofst){
 
-        if(kernel->mmu->get_free_frame(&frameIdx)){
-
-            pageTable[stopPageIdx].physicalPage = frameIdx;
-            pageTable[stopPageIdx].valid = true;
+            frameIdx = pageTable[stopPageIdx].physicalPage;
             if(readOnly) pageTable[stopPageIdx].readOnly = true;
 
             executable->ReadAt(
                 &(kernel->machine->mainMemory[frameIdx * PageSize]),
-                stopPageofst + 1, 
-                sgm.inFileAddr + PageSize - startPageofst + (stopPageIdx - startPageIdx - 1) * PageSize);
-        }
-        else{
-            // kernel->machine->RaiseException(MemoryLimitException, 0);
-        }
+                stopPageofst + 1, // size
+                sgm.inFileAddr + PageSize - startPageofst + (stopPageIdx - startPageIdx - 1) * PageSize); // file offset
     }
+
+
+
+	// unsigned int vpn, offset, physAddr;
+
+    // for(int i=sgm.virtualAddr;i<sgm.virtualAddr+sgm.size;i++){
+        
+    //     vpn = (unsigned) i / PageSize;
+    //     offset = (unsigned) i % PageSize;  
+        
+    //     // physAddr = pageTable[vpn].physicalPage * PageSize + offset;
+    //     physAddr = i;
+
+    //     char a = kernel->machine->mainMemory[physAddr];
+    //     cout << i << ": " << (unsigned int)a << "\n";
+    // }
+
+
+
+    // executable->ReadAt(&(kernel->machine->mainMemory[sgm.virtualAddr]), sgm.size, sgm.inFileAddr);
+
+    // for(int i=sgm.virtualAddr;i<sgm.virtualAddr+sgm.size;i++){
+   
+    //     char a = kernel->machine->mainMemory[i];
+    //     cout << i << ": " << (unsigned int)a << "\n";
+    // }
+
 
 }
 
@@ -267,12 +267,12 @@ void
 AddrSpace::Execute(char* fileName) 
 {
 
-
     // cout<< "\n[AddrSpace::Execute()] current thread: " << kernel->currentThread->getName() << "\n";
     
     kernel->currentThread->space = this;
 
     this->InitRegisters();		// set the initial register values
+    
     this->RestoreState();		// load page table register
 
     kernel->machine->Run();		// jump to the user progam
@@ -292,6 +292,36 @@ AddrSpace::Execute(char* fileName)
 //	will be saved/restored into the currentThread->userRegisters
 //	when this thread is context switched out.
 //----------------------------------------------------------------------
+
+// void
+// AddrSpace::InitRegisters()
+// {
+//     Machine *machine = kernel->machine;
+//     int i;
+
+//     for (i = 0; i < NumTotalRegs; i++)
+// 	    machine->WriteRegister(i, 0);
+
+//     // Initial program counter -- must be location of "Start", which
+//     //  is assumed to be virtual address zero
+//     int startAddr = startPageIdx * PageSize + startPageofst;
+//     machine->WriteRegister(PCReg, startAddr);	
+
+//     // Need to also tell MIPS where next instruction is, because
+//     // of branch delay possibility
+//     // Since instructions occupy four bytes each, the next instruction
+//     // after start will be at virtual address four.
+//     machine->WriteRegister(NextPCReg, startAddr + 4);
+
+//    // Set the stack register to the end of the address space, where we
+//    // allocated the stack; but subtract off a bit, to make sure we don't
+//    // accidentally reference off the end!
+    
+//     machine->WriteRegister(StackReg, (stopPageIdx + 1 ) * PageSize - 1 - 16);
+// }
+
+
+
 
 void
 AddrSpace::InitRegisters()
@@ -318,6 +348,10 @@ AddrSpace::InitRegisters()
     machine->WriteRegister(StackReg, numPages * PageSize - 16);
     DEBUG(dbgAddr, "Initializing stack pointer: " << numPages * PageSize - 16);
 }
+
+
+
+
 
 //----------------------------------------------------------------------
 // AddrSpace::SaveState

@@ -139,14 +139,21 @@ Machine::WriteMem(int addr, int size, int value)
 {
     ExceptionType exception;
     int physicalAddress;
+
+
+	// cout << "[WriteMem()] addr: " << addr << "\n";
      
     DEBUG(dbgAddr, "Writing VA " << addr << ", size " << size << ", value " << value);
 
     exception = Translate(addr, &physicalAddress, size, TRUE);
-    if (exception != NoException) {
-	RaiseException(exception, addr);
-	return FALSE;
+
+    
+	if (exception != NoException) {
+		RaiseException(exception, addr);
+		return FALSE;
     }
+
+
     switch (size) {
       case 1:
 	mainMemory[physicalAddress] = (unsigned char) (value & 0xff);
@@ -186,12 +193,16 @@ Machine::WriteMem(int addr, int size, int value)
 ExceptionType
 Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 {
+
+	
+
     int i;
     unsigned int vpn, offset;
     TranslationEntry *entry;
     unsigned int pageFrame;
 
     DEBUG(dbgAddr, "\tTranslate " << virtAddr << (writing ? " , write" : " , read"));
+
 
 // check for alignment errors
     if (((size == 4) && (virtAddr & 0x3)) || ((size == 2) && (virtAddr & 0x1))){
@@ -205,17 +216,21 @@ Machine::Translate(int virtAddr, int* physAddr, int size, bool writing)
 
 // calculate the virtual page number, and offset within the page,
 // from the virtual address
+
     vpn = (unsigned) virtAddr / PageSize;
     offset = (unsigned) virtAddr % PageSize;
     
+
     if (tlb == NULL) {		// => page table => vpn is index into table
 		
+
 		if (vpn >= pageTableSize) {
 			DEBUG(dbgAddr, "Illegal virtual page # " << virtAddr);
 			return AddressErrorException;
 		} 
-
 		else if (!pageTable[vpn].valid) {
+			// cout << "vpn: " << vpn << "\n";
+
 			DEBUG(dbgAddr, "Invalid virtual page # " << virtAddr);
 			return PageFaultException;
 		}

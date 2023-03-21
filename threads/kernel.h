@@ -126,7 +126,7 @@ class MMU {
 
     List<int> *freeFrameList; // free physical page
     int nFreeFrame;
-}
+};
 
 
 #endif // KERNEL_H

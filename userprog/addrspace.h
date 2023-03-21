@@ -15,6 +15,7 @@
 
 #include "copyright.h"
 #include "filesys.h"
+#include "noff.h"
 
 #define UserStackSize		1024 	// increase this as necessary!
 
@@ -25,7 +26,8 @@ class AddrSpace {
 
     bool Load(char *fileName);		// Load a program into addr space from
 
-    void LoadSegment(int vaddr, int size);
+    void LoadSegment(OpenFile *executable, Segment sgm, bool readOnly);
+    void ReleaseFrame();
                                         // a file
 					// return false if not found
 

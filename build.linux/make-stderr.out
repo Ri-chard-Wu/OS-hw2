@@ -1,0 +1,311 @@
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+../lib/libtest.cc:59: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../machine/interrupt.cc:30: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:30: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:33: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:33: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:33: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:33: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:33: warning: deprecated conversion from string constant to ‘char*’
+../machine/interrupt.cc:33: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+../machine/machine.cc:19: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+In file included from ../machine/mipssim.cc:17:
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.h:227: warning: deprecated conversion from string constant to ‘char*’
+../machine/mipssim.cc: In member function ‘void Machine::OneInstruction(Instruction*)’:
+../machine/mipssim.cc:148: warning: array subscript has type ‘char’
+../machine/mipssim.cc:171: warning: array subscript has type ‘char’
+../machine/mipssim.cc:171: warning: array subscript has type ‘char’
+../machine/mipssim.cc:172: warning: array subscript has type ‘char’
+../machine/mipssim.cc:172: warning: array subscript has type ‘char’
+../machine/mipssim.cc:173: warning: array subscript has type ‘char’
+../machine/mipssim.cc:177: warning: array subscript has type ‘char’
+../machine/mipssim.cc:181: warning: array subscript has type ‘char’
+../machine/mipssim.cc:182: warning: array subscript has type ‘char’
+../machine/mipssim.cc:187: warning: array subscript has type ‘char’
+../machine/mipssim.cc:191: warning: array subscript has type ‘char’
+../machine/mipssim.cc:191: warning: array subscript has type ‘char’
+../machine/mipssim.cc:195: warning: array subscript has type ‘char’
+../machine/mipssim.cc:195: warning: array subscript has type ‘char’
+../machine/mipssim.cc:195: warning: array subscript has type ‘char’
+../machine/mipssim.cc:199: warning: array subscript has type ‘char’
+../machine/mipssim.cc:199: warning: array subscript has type ‘char’
+../machine/mipssim.cc:199: warning: array subscript has type ‘char’
+../machine/mipssim.cc:203: warning: array subscript has type ‘char’
+../machine/mipssim.cc:203: warning: array subscript has type ‘char’
+../machine/mipssim.cc:207: warning: array subscript has type ‘char’
+../machine/mipssim.cc:207: warning: array subscript has type ‘char’
+../machine/mipssim.cc:214: warning: array subscript has type ‘char’
+../machine/mipssim.cc:219: warning: array subscript has type ‘char’
+../machine/mipssim.cc:224: warning: array subscript has type ‘char’
+../machine/mipssim.cc:231: warning: array subscript has type ‘char’
+../machine/mipssim.cc:236: warning: array subscript has type ‘char’
+../machine/mipssim.cc:236: warning: array subscript has type ‘char’
+../machine/mipssim.cc:241: warning: array subscript has type ‘char’
+../machine/mipssim.cc:245: warning: array subscript has type ‘char’
+../machine/mipssim.cc:245: warning: array subscript has type ‘char’
+../machine/mipssim.cc:246: warning: array subscript has type ‘char’
+../machine/mipssim.cc:246: warning: array subscript has type ‘char’
+../machine/mipssim.cc:251: warning: array subscript has type ‘char’
+../machine/mipssim.cc:252: warning: array subscript has type ‘char’
+../machine/mipssim.cc:271: warning: array subscript has type ‘char’
+../machine/mipssim.cc:273: warning: array subscript has type ‘char’
+../machine/mipssim.cc:278: warning: array subscript has type ‘char’
+../machine/mipssim.cc:292: warning: array subscript has type ‘char’
+../machine/mipssim.cc:310: warning: array subscript has type ‘char’
+../machine/mipssim.cc:314: warning: array subscript has type ‘char’
+../machine/mipssim.cc:326: warning: array subscript has type ‘char’
+../machine/mipssim.cc:354: warning: array subscript has type ‘char’
+../machine/mipssim.cc:378: warning: array subscript has type ‘char’
+../machine/mipssim.cc:406: warning: array subscript has type ‘char’
+../machine/mipssim.cc:433: warning: array subscript has type ‘char’
+../machine/mipssim.cc:437: warning: array subscript has type ‘char’
+../machine/mipssim.cc:441: warning: array subscript has type ‘char’
+../machine/mipssim.cc:445: warning: array subscript has type ‘char’
+../machine/mipssim.cc:449: warning: array subscript has type ‘char’
+../machine/mipssim.cc:449: warning: array subscript has type ‘char’
+../machine/mipssim.cc:454: warning: array subscript has type ‘char’
+../machine/mipssim.cc:454: warning: array subscript has type ‘char’
+../machine/mipssim.cc:459: warning: array subscript has type ‘char’
+../machine/mipssim.cc:459: warning: array subscript has type ‘char’
+../machine/mipssim.cc:459: warning: array subscript has type ‘char’
+../machine/mipssim.cc:463: warning: array subscript has type ‘char’
+../machine/mipssim.cc:463: warning: array subscript has type ‘char’
+../machine/mipssim.cc:463: warning: array subscript has type ‘char’
+../machine/mipssim.cc:467: warning: array subscript has type ‘char’
+../machine/mipssim.cc:467: warning: array subscript has type ‘char’
+../machine/mipssim.cc:471: warning: array subscript has type ‘char’
+../machine/mipssim.cc:471: warning: array subscript has type ‘char’
+../machine/mipssim.cc:476: warning: array subscript has type ‘char’
+../machine/mipssim.cc:476: warning: array subscript has type ‘char’
+../machine/mipssim.cc:481: warning: array subscript has type ‘char’
+../machine/mipssim.cc:481: warning: array subscript has type ‘char’
+../machine/mipssim.cc:485: warning: array subscript has type ‘char’
+../machine/mipssim.cc:485: warning: array subscript has type ‘char’
+../machine/mipssim.cc:485: warning: array subscript has type ‘char’
+../machine/mipssim.cc:489: warning: array subscript has type ‘char’
+../machine/mipssim.cc:489: warning: array subscript has type ‘char’
+../machine/mipssim.cc:490: warning: array subscript has type ‘char’
+../machine/mipssim.cc:492: warning: array subscript has type ‘char’
+../machine/mipssim.cc:496: warning: array subscript has type ‘char’
+../machine/mipssim.cc:497: warning: array subscript has type ‘char’
+../machine/mipssim.cc:499: warning: array subscript has type ‘char’
+../machine/mipssim.cc:503: warning: array subscript has type ‘char’
+../machine/mipssim.cc:506: warning: array subscript has type ‘char’
+../machine/mipssim.cc:508: warning: array subscript has type ‘char’
+../machine/mipssim.cc:512: warning: array subscript has type ‘char’
+../machine/mipssim.cc:513: warning: array subscript has type ‘char’
+../machine/mipssim.cc:515: warning: array subscript has type ‘char’
+../machine/mipssim.cc:517: warning: array subscript has type ‘char’
+../machine/mipssim.cc:521: warning: array subscript has type ‘char’
+../machine/mipssim.cc:521: warning: array subscript has type ‘char’
+../machine/mipssim.cc:525: warning: array subscript has type ‘char’
+../machine/mipssim.cc:525: warning: array subscript has type ‘char’
+../machine/mipssim.cc:526: warning: array subscript has type ‘char’
+../machine/mipssim.cc:530: warning: array subscript has type ‘char’
+../machine/mipssim.cc:532: warning: array subscript has type ‘char’
+../machine/mipssim.cc:536: warning: array subscript has type ‘char’
+../machine/mipssim.cc:537: warning: array subscript has type ‘char’
+../machine/mipssim.cc:538: warning: array subscript has type ‘char’
+../machine/mipssim.cc:542: warning: array subscript has type ‘char’
+../machine/mipssim.cc:542: warning: array subscript has type ‘char’
+../machine/mipssim.cc:543: warning: array subscript has type ‘char’
+../machine/mipssim.cc:543: warning: array subscript has type ‘char’
+../machine/mipssim.cc:544: warning: array subscript has type ‘char’
+../machine/mipssim.cc:548: warning: array subscript has type ‘char’
+../machine/mipssim.cc:552: warning: array subscript has type ‘char’
+../machine/mipssim.cc:552: warning: array subscript has type ‘char’
+../machine/mipssim.cc:552: warning: array subscript has type ‘char’
+../machine/mipssim.cc:556: warning: array subscript has type ‘char’
+../machine/mipssim.cc:556: warning: array subscript has type ‘char’
+../machine/mipssim.cc:561: warning: array subscript has type ‘char’
+../machine/mipssim.cc:593: warning: array subscript has type ‘char’
+../machine/mipssim.cc:596: warning: array subscript has type ‘char’
+../machine/mipssim.cc:600: warning: array subscript has type ‘char’
+../machine/mipssim.cc:604: warning: array subscript has type ‘char’
+../machine/mipssim.cc:620: warning: array subscript has type ‘char’
+../machine/mipssim.cc:652: warning: array subscript has type ‘char’
+../machine/mipssim.cc:655: warning: array subscript has type ‘char’
+../machine/mipssim.cc:658: warning: array subscript has type ‘char’
+../machine/mipssim.cc:661: warning: array subscript has type ‘char’
+../machine/mipssim.cc:683: warning: array subscript has type ‘char’
+../machine/mipssim.cc:683: warning: array subscript has type ‘char’
+../machine/mipssim.cc:683: warning: array subscript has type ‘char’
+../machine/mipssim.cc:687: warning: array subscript has type ‘char’
+../machine/mipssim.cc:687: warning: array subscript has type ‘char’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../machine/translate.cc: In member function ‘ExceptionType Machine::Translate(int, int*, int, bool)’:
+../machine/translate.cc:249: warning: comparison between signed and unsigned integer expressions
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../threads/kernel.cc: In member function ‘void Kernel::Initialize()’:
+../threads/kernel.cc:98: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc: In member function ‘void Kernel::ThreadSelfTest()’:
+../threads/kernel.cc:158: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc: In member function ‘void Kernel::NetworkTest()’:
+../threads/kernel.cc:214: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc:215: warning: deprecated conversion from string constant to ‘char*’
+../threads/kernel.cc: In member function ‘void Kernel::ExecAll()’:
+../threads/kernel.cc:268: warning: unused variable ‘a’
+In file included from ../threads/synchlist.h:49,
+                 from ../threads/kernel.cc:14:
+../threads/synchlist.cc: In constructor ‘SynchList<T>::SynchList() [with T = int]’:
+../threads/kernel.cc:164:   instantiated from here
+../threads/synchlist.cc:26: warning: deprecated conversion from string constant to ‘char*’
+../threads/synchlist.cc:27: warning: deprecated conversion from string constant to ‘char*’
+../threads/synchlist.cc: In member function ‘void SynchList<T>::SelfTest(T) [with T = int]’:
+../threads/kernel.cc:165:   instantiated from here
+../threads/synchlist.cc:120: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+In file included from ../threads/main.cc:41:
+../lib/copyright.h:23: warning: deprecated conversion from string constant to ‘char*’
+../threads/main.cc: In function ‘int main(int, char**)’:
+../threads/main.cc:170: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../threads/synch.cc: In member function ‘void Semaphore::SelfTest()’:
+../threads/synch.cc:140: warning: deprecated conversion from string constant to ‘char*’
+../threads/synch.cc:143: warning: deprecated conversion from string constant to ‘char*’
+../threads/synch.cc: In constructor ‘Lock::Lock(char*)’:
+../threads/synch.cc:163: warning: deprecated conversion from string constant to ‘char*’
+../threads/synch.cc: In member function ‘void Condition::Wait(Lock*)’:
+../threads/synch.cc:252: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../threads/thread.cc: In member function ‘void Thread::SelfTest()’:
+../threads/thread.cc:440: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/addrspace.cc: In member function ‘ExceptionType AddrSpace::Translate(unsigned int, unsigned int*, int)’:
+../userprog/addrspace.cc:392: warning: comparison between signed and unsigned integer expressions
+../threads/kernel.h: In member function ‘bool MMU::get_free_frame(int*)’:
+../threads/kernel.h:120: warning: control reaches end of non-void function
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/exception.cc: In function ‘void ExceptionHandler(ExceptionType)’:
+../userprog/exception.cc:51: warning: unused variable ‘ch’
+../userprog/exception.cc:54: warning: unused variable ‘exit’
+../userprog/exception.cc:54: warning: unused variable ‘threadID’
+../userprog/exception.cc:54: warning: unused variable ‘programID’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../userprog/synchconsole.cc: In constructor ‘SynchConsoleInput::SynchConsoleInput(char*)’:
+../userprog/synchconsole.cc:23: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc:24: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc: In constructor ‘SynchConsoleOutput::SynchConsoleOutput(char*)’:
+../userprog/synchconsole.cc:79: warning: deprecated conversion from string constant to ‘char*’
+../userprog/synchconsole.cc:80: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../filesys/synchdisk.cc: In constructor ‘SynchDisk::SynchDisk()’:
+../filesys/synchdisk.cc:30: warning: deprecated conversion from string constant to ‘char*’
+../filesys/synchdisk.cc:31: warning: deprecated conversion from string constant to ‘char*’
+cc1plus: note: obsolete option -I- used, please use -iquote instead
+../network/post.cc: In constructor ‘PostOfficeInput::PostOfficeInput(int)’:
+../network/post.cc:155: warning: deprecated conversion from string constant to ‘char*’
+../network/post.cc:162: warning: deprecated conversion from string constant to ‘char*’
+../network/post.cc: In constructor ‘PostOfficeOutput::PostOfficeOutput(double)’:
+../network/post.cc:268: warning: deprecated conversion from string constant to ‘char*’
+../network/post.cc:269: warning: deprecated conversion from string constant to ‘char*’
+In file included from ../threads/synchlist.h:49,
+                 from ../network/post.h:34,
+                 from ../network/post.cc:20:
+../threads/synchlist.cc: In constructor ‘SynchList<T>::SynchList() [with T = Mail*]’:
+../network/post.cc:52:   instantiated from here
+../threads/synchlist.cc:26: warning: deprecated conversion from string constant to ‘char*’
+../threads/synchlist.cc:27: warning: deprecated conversion from string constant to ‘char*’
+cc1: note: obsolete option -I- used, please use -iquote instead

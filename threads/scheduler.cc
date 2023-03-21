@@ -165,6 +165,7 @@ void
 Scheduler::CheckToBeDestroyed()
 {
     if (toBeDestroyed != NULL) {
+        toBeDestroyed->space->ReleaseFrame();
         delete toBeDestroyed;
 	    toBeDestroyed = NULL;
     }

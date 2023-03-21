@@ -19,7 +19,7 @@
 #include "main.h"
 #include "addrspace.h"
 #include "machine.h"
-#include "noff.h"
+
 
 //----------------------------------------------------------------------
 // SwapHeader
@@ -146,46 +146,19 @@ AddrSpace::Load(char *fileName)
 
 
     numPages = divRoundUp(size, PageSize);
-    // size = numPages * PageSize;
-
-    if(!kernel->mmu->has_enough_frame(numPages)){
-        kernel->machine->RaiseException(MemoryLimitException);
-    }
-
-    LoadSegment(noffH.code, false);
-    LoadSegment(noffH.initData, false);
-#ifdef RDATA
-    LoadSegment(noffH.readonlyData, true);
-#endif    
-
-  
-    // if (noffH.code.size > 0) {
- 
-    //     executable->ReadAt(
-	// 	    &(kernel->machine->mainMemory[noffH.code.virtualAddr]), 
-	// 		noffH.code.size, noffH.code.inFileAddr);
-        
+    
+    ASSERT(kernel->mmu->has_enough_frame(numPages));
+    
+    // if(!kernel->mmu->has_enough_frame(numPages)){
+    //     kernel->machine->RaiseException(MemoryLimitException, 0);
     // }
 
+    LoadSegment(executable, noffH.code, false);
+    LoadSegment(executable, noffH.initData, false);
+#ifdef RDATA
+    LoadSegment(executable, noffH.readonlyData, true);
+#endif    
 
-//     if (noffH.initData.size > 0) {
-
-      
-//         executable->ReadAt(
-// 		&(kernel->machine->mainMemory[noffH.initData.virtualAddr]),
-// 			noffH.initData.size, noffH.initData.inFileAddr);
-//     }
-
- 
-// #ifdef RDATA
-
-//     if (noffH.readonlyData.size > 0) {
-//         executable->ReadAt(
-// 		    &(kernel->machine->mainMemory[noffH.readonlyData.virtualAddr]),
-// 			noffH.readonlyData.size, noffH.readonlyData.inFileAddr);
-//     }
-
-// #endif
 
     delete executable;			// close file
     return TRUE;			// success
@@ -194,8 +167,9 @@ AddrSpace::Load(char *fileName)
 
 
 
-void LoadSegment(Segment sgm, bool readOnly){
-    if(size <= 0) return;
+void 
+AddrSpace::LoadSegment(OpenFile *executable, Segment sgm, bool readOnly){
+    if(sgm.size <= 0) return;
 
 
 	int frameIdx;
@@ -211,9 +185,9 @@ void LoadSegment(Segment sgm, bool readOnly){
 
         if(kernel->mmu->get_free_frame(&frameIdx)){
 
-            this->pageTable[startPageIdx].physicalPage = frameIdx;
-            this->pageTable[startPageIdx].valid = true;
-            if(readOnly) this->pageTable[startPageIdx].readOnly = true;
+            pageTable[startPageIdx].physicalPage = frameIdx;
+            pageTable[startPageIdx].valid = true;
+            if(readOnly) pageTable[startPageIdx].readOnly = true;
 
             executable->ReadAt(
                 &(kernel->machine->mainMemory[frameIdx * PageSize + startPageofst]),
@@ -221,7 +195,7 @@ void LoadSegment(Segment sgm, bool readOnly){
                 sgm.inFileAddr);
         }
         else{
-            kernel->machine->RaiseException(MemoryLimitException);
+            // kernel->machine->RaiseException(MemoryLimitException, 0);
         }
     }
 
@@ -230,16 +204,16 @@ void LoadSegment(Segment sgm, bool readOnly){
         
         if(kernel->mmu->get_free_frame(&frameIdx)){
 
-            this->pageTable[i].physicalPage = frameIdx;
-            this->pageTable[i].valid = true;
-            if(readOnly) this->pageTable[i].readOnly = true;
+            pageTable[i].physicalPage = frameIdx;
+            pageTable[i].valid = true;
+            if(readOnly) pageTable[i].readOnly = true;
 
             executable->ReadAt(&(kernel->machine->mainMemory[frameIdx * PageSize]),
                 PageSize, 
                 sgm.inFileAddr + PageSize - startPageofst + (i - startPageIdx - 1) * PageSize);
         }
         else{
-            kernel->machine->RaiseException(MemoryLimitException);
+            // kernel->machine->RaiseException(MemoryLimitException, 0);
         }
     }
 
@@ -248,9 +222,9 @@ void LoadSegment(Segment sgm, bool readOnly){
 
         if(kernel->mmu->get_free_frame(&frameIdx)){
 
-            this->pageTable[stopPageIdx].physicalPage = frameIdx;
-            this->pageTable[stopPageIdx].valid = true;
-            if(readOnly) this->pageTable[stopPageIdx].readOnly = true;
+            pageTable[stopPageIdx].physicalPage = frameIdx;
+            pageTable[stopPageIdx].valid = true;
+            if(readOnly) pageTable[stopPageIdx].readOnly = true;
 
             executable->ReadAt(
                 &(kernel->machine->mainMemory[frameIdx * PageSize]),
@@ -258,10 +232,22 @@ void LoadSegment(Segment sgm, bool readOnly){
                 sgm.inFileAddr + PageSize - startPageofst + (stopPageIdx - startPageIdx - 1) * PageSize);
         }
         else{
-            kernel->machine->RaiseException(MemoryLimitException);
+            // kernel->machine->RaiseException(MemoryLimitException, 0);
         }
     }
 
+}
+
+
+
+
+void 
+AddrSpace::ReleaseFrame(){
+    for(int i=0;i<NumPhysPages;i++){
+        if(pageTable[i].valid){
+            kernel->mmu->release_frame(pageTable[i].physicalPage);
+        }
+    }
 }
 
 

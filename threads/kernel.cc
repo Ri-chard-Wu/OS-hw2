@@ -113,6 +113,7 @@ Kernel::Initialize()
 #endif // FILESYS_STUB
     postOfficeIn = new PostOfficeInput(10);
     postOfficeOut = new PostOfficeOutput(reliability);
+    mmu = new MMU();
 
     interrupt->Enable();
 }

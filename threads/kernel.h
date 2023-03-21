@@ -25,6 +25,8 @@ class PostOfficeOutput;
 class SynchConsoleInput;
 class SynchConsoleOutput;
 class SynchDisk;
+class MMU;
+
 
 typedef int OpenFileId;
 
@@ -69,6 +71,7 @@ class Kernel {
     FileSystem *fileSystem;     
     PostOfficeInput *postOfficeIn;
     PostOfficeOutput *postOfficeOut;
+    MMU *mmu;
 
     int hostName;               // machine identifier
 
@@ -97,11 +100,9 @@ class MMU {
     MMU(){
 
         freeFrameList = new List<int>;
-
         for (int i = 0; i < NumPhysPages; i++){
             freeFrameList->Append(i);
         }    
-
         nFreeFrame = NumPhysPages;
     }
 
@@ -122,9 +123,6 @@ class MMU {
         freeFrameList->Append(frame_idx);
         nFreeFrame++;
     }
-
-
-
 
     List<int> *freeFrameList; // free physical page
     int nFreeFrame;

@@ -133,7 +133,11 @@ Scheduler::Run (Thread *nextThread, bool finishing)
 
     // cout<< "\n[Scheduler::Run()] current thread: " << kernel->currentThread->getName() << "\n";
 
+    cout<< "\n[AddrSpace::Execute()] before SWITCH(), oldThread: " << oldThread->getName() << "\n";
+
     SWITCH(oldThread, nextThread);
+
+    cout<< "\n[AddrSpace::Execute()] after SWITCH(), oldThread: " << oldThread->getName() << "\n";
 
     // we're back, running oldThread
       

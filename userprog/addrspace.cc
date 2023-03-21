@@ -208,34 +208,6 @@ AddrSpace::LoadSegment(OpenFile *executable, Segment sgm, bool readOnly){
                 stopPageofst + 1, // size
                 sgm.inFileAddr + PageSize - startPageofst + (stopPageIdx - startPageIdx - 1) * PageSize); // file offset
     }
-
-
-
-	// unsigned int vpn, offset, physAddr;
-
-    // for(int i=sgm.virtualAddr;i<sgm.virtualAddr+sgm.size;i++){
-        
-    //     vpn = (unsigned) i / PageSize;
-    //     offset = (unsigned) i % PageSize;  
-        
-    //     // physAddr = pageTable[vpn].physicalPage * PageSize + offset;
-    //     physAddr = i;
-
-    //     char a = kernel->machine->mainMemory[physAddr];
-    //     cout << i << ": " << (unsigned int)a << "\n";
-    // }
-
-
-
-    // executable->ReadAt(&(kernel->machine->mainMemory[sgm.virtualAddr]), sgm.size, sgm.inFileAddr);
-
-    // for(int i=sgm.virtualAddr;i<sgm.virtualAddr+sgm.size;i++){
-   
-    //     char a = kernel->machine->mainMemory[i];
-    //     cout << i << ": " << (unsigned int)a << "\n";
-    // }
-
-
 }
 
 
@@ -292,35 +264,6 @@ AddrSpace::Execute(char* fileName)
 //	will be saved/restored into the currentThread->userRegisters
 //	when this thread is context switched out.
 //----------------------------------------------------------------------
-
-// void
-// AddrSpace::InitRegisters()
-// {
-//     Machine *machine = kernel->machine;
-//     int i;
-
-//     for (i = 0; i < NumTotalRegs; i++)
-// 	    machine->WriteRegister(i, 0);
-
-//     // Initial program counter -- must be location of "Start", which
-//     //  is assumed to be virtual address zero
-//     int startAddr = startPageIdx * PageSize + startPageofst;
-//     machine->WriteRegister(PCReg, startAddr);	
-
-//     // Need to also tell MIPS where next instruction is, because
-//     // of branch delay possibility
-//     // Since instructions occupy four bytes each, the next instruction
-//     // after start will be at virtual address four.
-//     machine->WriteRegister(NextPCReg, startAddr + 4);
-
-//    // Set the stack register to the end of the address space, where we
-//    // allocated the stack; but subtract off a bit, to make sure we don't
-//    // accidentally reference off the end!
-    
-//     machine->WriteRegister(StackReg, (stopPageIdx + 1 ) * PageSize - 1 - 16);
-// }
-
-
 
 
 void

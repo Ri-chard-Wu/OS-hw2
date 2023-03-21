@@ -24,6 +24,8 @@ class AddrSpace {
     ~AddrSpace();			// De-allocate an address space
 
     bool Load(char *fileName);		// Load a program into addr space from
+
+    void LoadSegment(int vaddr, int size);
                                         // a file
 					// return false if not found
 

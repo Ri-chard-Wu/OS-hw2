@@ -106,8 +106,8 @@ class MMU {
         nFreeFrame = NumPhysPages;
     }
 
-    bool has_enough_frame(int nBytes){
-        if(nFreeFrame * PageSize >= nBytes) return true;
+    bool has_enough_frame(int nframes){
+        if(nFreeFrame >= nframes) return true;
         else{return false;}
     }
 

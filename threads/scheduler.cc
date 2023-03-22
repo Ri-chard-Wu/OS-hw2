@@ -133,11 +133,11 @@ Scheduler::Run (Thread *nextThread, bool finishing)
 
     // cout<< "\n[Scheduler::Run()] current thread: " << kernel->currentThread->getName() << "\n";
 
-    cout<< "\n[AddrSpace::Execute()] before SWITCH(), oldThread: " << oldThread->getName() << "\n";
+    // cout<< "\n[Scheduler::Run()] before SWITCH(), oldThread: " << oldThread->getName() << "\n";
 
     SWITCH(oldThread, nextThread);
 
-    cout<< "\n[AddrSpace::Execute()] after SWITCH(), oldThread: " << oldThread->getName() << "\n";
+    // cout<< "\n[Scheduler::Run()] after SWITCH(), oldThread: " << oldThread->getName() << "\n";
 
     // we're back, running oldThread
       
@@ -169,10 +169,16 @@ void
 Scheduler::CheckToBeDestroyed()
 {
     if (toBeDestroyed != NULL) {
+        // cout << "toBeDestroyed: " << toBeDestroyed->getName() << "\n";
+
+        // cout << "before free: nFreeFrame: " << kernel->mmu->nFreeFrame << "\n";
+
         if(toBeDestroyed->space)
             toBeDestroyed->space->ReleaseFrame();
         delete toBeDestroyed;
 	    toBeDestroyed = NULL;
+
+        // cout << "after free: nFreeFrame: " << kernel->mmu->nFreeFrame << "\n";
     }
 }
  

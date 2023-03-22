@@ -132,8 +132,19 @@ AddrSpace::Load(char *fileName)
 
 
     numPages = divRoundUp(size, PageSize);
+
+    // cout << "noffH.code.size: " << noffH.code.size << "\n";
+    // cout << "noffH.initData.size: " << noffH.initData.size << "\n";
+    // cout << "noffH.readonlyData.size: " << noffH.readonlyData.size << "\n";
+    // cout << "noffH.uninitData.size: " << noffH.uninitData.size << "\n";
     
-    ASSERT(kernel->mmu->has_enough_frame(numPages));
+    // cout << "numPages: " << numPages << "\n";
+
+    if(!kernel->mmu->has_enough_frame(numPages)){
+        kernel->interrupt->setStatus(SystemMode);
+        ExceptionHandler(MemoryLimitException);		
+        kernel->interrupt->setStatus(UserMode);        
+    }
     
     int frameIdx;
     for(int i=0;i<numPages;i++){
@@ -141,14 +152,6 @@ AddrSpace::Load(char *fileName)
         pageTable[i].physicalPage = frameIdx;
         pageTable[i].valid = true;
     }
-
-    // if(!kernel->mmu->has_enough_frame(numPages)){
-    //     kernel->machine->RaiseException(MemoryLimitException, 0);
-    // }
-
-    // cout << "noffH.code.virtualAddr: "<< noffH.code.virtualAddr << "\n"
-    //      << "noffH.code.inFileAddr: "<< noffH.code.inFileAddr << "\n"
-    //      << "noffH.code.size: "<< noffH.code.size << "\n";
 
     LoadSegment(executable, noffH.code, false);
     LoadSegment(executable, noffH.initData, false);
@@ -171,11 +174,11 @@ AddrSpace::LoadSegment(OpenFile *executable, Segment sgm, bool readOnly){
     int frameIdx;
     int startPageIdx, startPageofst, stopPageIdx, stopPageofst;
     
-
     startPageIdx = sgm.virtualAddr / PageSize;
     startPageofst = sgm.virtualAddr % PageSize;
     stopPageIdx = (sgm.virtualAddr + sgm.size - 1) / PageSize;
     stopPageofst = (sgm.virtualAddr + sgm.size - 1) % PageSize;
+
 
     if(readOnly) pageTable[startPageIdx].readOnly = true;
 
@@ -184,7 +187,6 @@ AddrSpace::LoadSegment(OpenFile *executable, Segment sgm, bool readOnly){
         &(kernel->machine->mainMemory[frameIdx * PageSize + startPageofst]),
         PageSize - startPageofst, 
         sgm.inFileAddr);
-
 
 
     for(int i = startPageIdx + 1; i <= stopPageIdx - 1; i++){
@@ -196,7 +198,6 @@ AddrSpace::LoadSegment(OpenFile *executable, Segment sgm, bool readOnly){
             PageSize, 
             sgm.inFileAddr + PageSize - startPageofst + (i - startPageIdx - 1) * PageSize);
     }
-
 
     if(stopPageofst){
 
@@ -217,7 +218,8 @@ void
 AddrSpace::ReleaseFrame(){
     for(int i=0;i<NumPhysPages;i++){
         if(pageTable[i].valid){
-            kernel->mmu->release_frame(pageTable[i].physicalPage);
+            kernel->mmu->release_frame(
+                pageTable[i].physicalPage);
         }
     }
 }

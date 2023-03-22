@@ -8,8 +8,11 @@ RunFile=./nachos
 if [ -f "$RunFile" ]; then
 
     cd /home/os2023/os23s67/NachOS-4.0_MP2/code/test
+    make clean
+    make consoleIO_test1
+    make consoleIO_test2
+    make consoleIO_test3
     ../build.linux/nachos -e consoleIO_test1 -e consoleIO_test2 2> run-stderr.out
-    # ../build.linux/nachos -e consoleIO_test1 2> run-stderr.out
 
 
     echo "================================="

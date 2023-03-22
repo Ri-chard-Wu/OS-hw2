@@ -269,9 +269,9 @@ cc1plus: note: obsolete option -I- used, please use -iquote instead
 ../threads/thread.cc:440: warning: deprecated conversion from string constant to ‘char*’
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 ../userprog/addrspace.cc: In member function ‘bool AddrSpace::Load(char*)’:
-../userprog/addrspace.cc:139: warning: comparison between signed and unsigned integer expressions
+../userprog/addrspace.cc:150: warning: comparison between signed and unsigned integer expressions
 ../userprog/addrspace.cc: In member function ‘ExceptionType AddrSpace::Translate(unsigned int, unsigned int*, int)’:
-../userprog/addrspace.cc:426: warning: comparison between signed and unsigned integer expressions
+../userprog/addrspace.cc:371: warning: comparison between signed and unsigned integer expressions
 ../threads/kernel.h: In member function ‘bool MMU::get_free_frame(int*)’:
 ../threads/kernel.h:120: warning: control reaches end of non-void function
 cc1plus: note: obsolete option -I- used, please use -iquote instead
@@ -288,7 +288,7 @@ cc1plus: note: obsolete option -I- used, please use -iquote instead
 ../userprog/synchconsole.cc:79: warning: deprecated conversion from string constant to ‘char*’
 ../userprog/synchconsole.cc:80: warning: deprecated conversion from string constant to ‘char*’
 ../userprog/synchconsole.cc: In member function ‘void SynchConsoleOutput::PutInt(int)’:
-../userprog/synchconsole.cc:117: warning: embedded ‘\0’ in format
+../userprog/synchconsole.cc:121: warning: embedded ‘\0’ in format
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 cc1plus: note: obsolete option -I- used, please use -iquote instead
 cc1plus: note: obsolete option -I- used, please use -iquote instead
